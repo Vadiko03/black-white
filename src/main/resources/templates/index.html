@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black & White | Official Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <nav class="bw-nav">
+        <div class="logo-text">BLACK & WHITE</div>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/shop">SHOP</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>THE COSMOS COLLECTION</h1>
+            <p class="hero-description">
+                Ogni capo della linea Cosmos è progettato per chi cerca la perfezione nel dettaglio. 
+                Non è solo abbigliamento, è una connessione astrale.
+            </p>
+            <a href="/shop" class="bw-button-large">EXPLORE NOW</a>
+        </div>
+    </header>
+
+    <main class="bw-main">
+        
+        <section class="highlight-banner">
+            <div class="banner-content">
+                <h2>IN EVIDENZA</h2>
+                <p>Scopri i pezzi più amati della collezione Cosmos.</p>
+            </div>
+        </section>
+
+        <div class="product-grid">
+            <div th:each="felpa : ${listaFelpe}" class="felpa-card" onclick="apriImmagine(this)">
+                <div class="product-image">
+                    <img th:src="${felpa.nome.contains('Bianca') ? '/images/felpa-bianca.png' : '/images/felpa-nera.png'}" 
+                         alt="Felpa">
+                </div>
+                <div class="product-info">
+                    <h2 th:text="${felpa.nome}">Nome</h2>
+                    <p class="price" th:text="${felpa.prezzo + ' €'}">Prezzo</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-zoom" class="modal" onclick="chiudiImmagine()">
+            <img id="modal-img">
+        </div>
+
+    </main>
+
+    <footer class="bw-footer">
+        <p>Felpe Black & White - © 2026</p>
+    </footer>
+
+</body>
+</html>

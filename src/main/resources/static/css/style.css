@@ -1,0 +1,108 @@
+/* --- RESET E FONT --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bw-blue-dark: #020617;
+    --bw-gold-light: #f1f5f9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bw-blue-dark);
+    background-image: url('../images/sfondo-definitivo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    color: var(--bw-gold-light);
+    min-height: 100vh;
+}
+
+/* --- NAV BAR --- */
+.bw-nav {
+    position: fixed; top: 0; width: 100%; height: 70px;
+    padding: 0 100px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(2, 6, 23, 0.9);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+}
+
+.logo-text { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; letter-spacing: 2px; }
+.bw-nav ul { display: flex; list-style: none; gap: 40px; }
+.bw-nav a { text-decoration: none; color: #fff; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; transition: 0.3s; }
+.bw-nav a:hover { color: #d1d1d1; }
+
+/* --- HERO SECTION (Aggiornata) --- */
+.hero-section {
+    position: relative; height: 100vh;
+    background: url('/images/banner-cosmos.jpg') center/cover no-repeat;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+.hero-content { position: relative; z-index: 2; padding: 20px; }
+.hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; margin-bottom: 20px; }
+
+/* Stile della nuova descrizione */
+.hero-description {
+    font-size: 1.2rem;
+    color: #e2e8f0;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+/* --- GRIGLIA PRODOTTI --- */
+.product-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; padding: 80px 10%; background: transparent;
+}
+.felpa-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 25px; border-radius: 12px;
+    backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.4s; text-align: center; cursor: pointer;
+}
+.felpa-card:hover { transform: translateY(-10px); background-color: rgba(255, 255, 255, 0.1); }
+
+.product-image { height: 300px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.product-image img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.product-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 10px; }
+
+/* --- BOTTONI E FOOTER --- */
+.bw-button-large {
+    display: inline-block; padding: 15px 40px; border: 1px solid white;
+    color: white; text-decoration: none; text-transform: uppercase;
+    letter-spacing: 2px; transition: 0.3s;
+}
+.bw-button-large:hover { background: white; color: black; }
+
+.bw-footer { text-align: center; padding: 30px; color: #64748b; font-size: 11px; text-transform: uppercase; }
+
+/* --- MODALE --- */
+.modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+.modal img { display: block; margin: 10% auto; max-width: 80%; }
+.highlight-banner {
+    padding: 60px 10%;
+    text-align: center;
+    background: transparent;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.highlight-banner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.highlight-banner p {
+    color: #cbd5e1;
+    margin-top: 10px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
