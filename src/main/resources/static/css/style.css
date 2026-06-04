@@ -106,3 +106,20 @@ body {
     font-size: 1rem;
     letter-spacing: 1px;
 }
+/* Stile per i telefoni (schermi stretti) */
+@media (max-width: 600px) {
+    .container {
+        width: 100%; /* Occupa tutto lo spazio */
+        padding: 10px;
+    }
+    
+    .menu {
+        display: none; /* Magari nascondi il menu lungo */
+    }
+    
+    /* Aumenta la dimensione dei bottoni, che col dito è scomodo cliccà */
+    button {
+        padding: 15px;
+        font-size: 18px;
+    }
+}
